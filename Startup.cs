@@ -74,8 +74,7 @@ namespace Dksh.ePOD
                 var policy = new AuthorizationPolicyBuilder()
                     .RequireAuthenticatedUser()
                     .Build();
-                options.Filters.Add(new AuthorizeFilter(policy));
-                options.ModelBinderProviders.Insert(0, new CustomModelBinderProvider()); //for custom model biding during runtime.
+                options.Filters.Add(new AuthorizeFilter(policy));                
             });
 
             services.AddDbContext<ApplicationDbContext>(options =>

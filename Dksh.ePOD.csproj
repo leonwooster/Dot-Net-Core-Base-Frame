@@ -9,10 +9,13 @@
   <ItemGroup>
     <Compile Remove="Data\AuditTrailRepository.cs" />
     <Compile Remove="Data\GenericRepository.cs" />
+    <Compile Remove="Helpers\MVC\CustomModelBinder.cs" />
     <Compile Remove="Services\CommonDataService.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Home\Privacy.cshtml" />
+    <Content Remove="Views\Home\View.cshtml" />
     <Content Remove="Views\Shared\_LayoutCompany.cshtml" />
   </ItemGroup>
 
@@ -32,6 +35,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="RazorComponents\" />
+    <Folder Include="Views\AddressType\" />
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
 

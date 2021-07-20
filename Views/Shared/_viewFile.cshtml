@@ -1,6 +1,0 @@
-﻿@model FileUploadParam
-
-@if (Model.Value != null && !string.IsNullOrWhiteSpace(Model.Value.ToString()))
-{
-    <a href="@Model.Url" target="_blank"><img src="~/images/file.png" />@Model.Value</a>
-}

@@ -66,21 +66,12 @@ namespace Dksh.ePOD.Controllers
         /// </summary>
         /// <param name="id">Questionnaire id in database table.</param>
         /// <returns>The editable/view only form.</returns>
+        [AllowAnonymous]
         public IActionResult Index(long? id)
         {
             try
             {
                 ViewData["Title"] = _localizer["PageTitle"];                
-
-                if (id.HasValue)
-                {
-                }
-                else
-                {
-                    //treat this as invalid for now.
-                    //m.ui_state = Constants.EditOnly;
-                    return View("InvalidOpr");
-                }
 
                 return View("Index");                
             }

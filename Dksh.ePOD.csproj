@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\AuditTrailRepository.cs" />
+    <Compile Remove="Data\GenericRepository.cs" />
+    <Compile Remove="Services\CommonDataService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="Views\Shared\_LayoutCompany.cshtml" />
   </ItemGroup>
 

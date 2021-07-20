@@ -53,7 +53,7 @@ namespace Dksh.ePOD
             };
 
             services.AddDbContext<DataContext>();
-            services.AddDbContext<AccessControlDA>();
+            
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
@@ -112,12 +112,9 @@ namespace Dksh.ePOD
 
             services.AddSingleton<IEmailConfiguration>(Configuration.GetSection("EmailConfiguration").Get<EmailConfiguration>());
             services.AddSingleton<IUsualConfig>(config);
-
-            services.AddScoped<IAccessControlService, AccessControlService>();
-            services.AddScoped<ICommonDataService, CommonDataService>();
+                                    
             services.AddScoped<IEmailService, EmailService>();
-
-            services.AddScoped<IExternalQuestionnaireService, ExternalQuestionnaireService>();
+            services.AddScoped<IPerson, PersonService>();
 
 
             //limit the file size that the user can upload to 201MB.

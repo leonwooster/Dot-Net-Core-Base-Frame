@@ -29,15 +29,11 @@ namespace Dksh.ePOD.Controllers
     public class HomeController : BaseController
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IExternalQuestionnaireService _service;
-        private readonly ICommonDataService _commonService;
+        private readonly IPerson _service;        
         private readonly IMapper _mapper;
         private readonly IEmailService _emailService;
         private readonly IEmailConfiguration _emailConfig;
         private readonly IStringLocalizer<HomeController> _localizer;
-
-        private readonly long _maxFileSize = 29360128;
-        private readonly string[] _fileExtension = new string[] { ".jpg", ".jpeg", ".bmp", ".gif", ".png", ".txt", ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pdf", ".pptx", ".zip", ".7z" };
 
         /// <summary>
         /// A constructor that receives multiple DI components.
@@ -49,16 +45,15 @@ namespace Dksh.ePOD.Controllers
         /// <param name="email">Email component.</param>
         /// <param name="emailConfiguration">Email configuration element.</param>
         public HomeController(ILogger<HomeController> logger,
-                                IExternalQuestionnaireService service,
-                                ICommonDataService commonService,
+                                IPerson service,
+                                
                                 IMapper mapper,
                                 IEmailService email,
                                 IEmailConfiguration emailConfiguration,
                                 IStringLocalizer<HomeController> localizer)
         {
             _logger = logger;
-            _service = service;            
-            _commonService = commonService;
+            _service = service;                        
             _mapper = mapper;
             _emailService = email;
             _emailConfig = emailConfiguration;
@@ -75,20 +70,10 @@ namespace Dksh.ePOD.Controllers
         {
             try
             {
-                SetBaseUrl();
-
-                ViewData["Title"] = _localizer["PageTitle"];
-
-                QFormModel m = null;
+                ViewData["Title"] = _localizer["PageTitle"];                
 
                 if (id.HasValue)
                 {
-                    var d = _service.GetExternalQuestionnaire(id.Value);
-                    m = GenerateModel(d);
-
-                    if (m.status == Constants.RecordSentToExt)
-                        m.ui_state = Constants.EditOnly;
-                    else m.ui_state = Constants.ViewOnly;
                 }
                 else
                 {
@@ -97,12 +82,7 @@ namespace Dksh.ePOD.Controllers
                     return View("InvalidOpr");
                 }
 
-                PopulateSelectLists(m.flowcountry, ref m);
-
-                if (m.ui_state == Constants.ViewOnly)
-                    return View("~/Views/Home/View.cshtml", m);
-                else                
-                    return View("Index", m);                
+                return View("Index");                
             }
             catch (Exception ex)
             {

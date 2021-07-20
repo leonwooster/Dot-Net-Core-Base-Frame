@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore.Query.Internal;
 
 using Dksh.ePOD.Email;
 
@@ -11,7 +10,6 @@ using MimeKit;
 using MimeKit.Text;
 using MailKit.Net.Smtp;
 using MailKit.Net.Pop3;
-using Dksh.ePOD.Data;
 
 namespace Dksh.ePOD.Services
 {
@@ -24,7 +22,7 @@ namespace Dksh.ePOD.Services
 	{
 		private readonly IEmailConfiguration _emailConfiguration;
 
-		public EmailService(IEmailConfiguration emailConfiguration, IAccessControlService accessControl, IHttpContextAccessor ctx): base(null, accessControl, ctx)
+		public EmailService(IEmailConfiguration emailConfiguration, IHttpContextAccessor ctx): base(null, ctx)
 		{
 			_emailConfiguration = emailConfiguration;
 		}

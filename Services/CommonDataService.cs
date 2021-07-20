@@ -13,18 +13,14 @@ namespace Dksh.ePOD.Services
 {    
     public interface ICommonDataService
     {
-        public IEnumerable<CommonDataBO> GetData(string country);
-        public IEnumerable<AuditTrailBO> GetAuditTrails();
-
-        public void CreateAuditTrail(AuditTrailBO bo);
 
     }
 
     public class CommonDataService : ServiceBase, ICommonDataService
     {
         DataContext _ctx;
-        public CommonDataService(DataContext ctx, IAccessControlService accessControl, IHttpContextAccessor httpContextAccessor) :
-            base(ctx, accessControl, httpContextAccessor)
+        public CommonDataService(DataContext ctx, IHttpContextAccessor httpContextAccessor) :
+            base(ctx, httpContextAccessor)
         {
             _ctx = ctx;
         }

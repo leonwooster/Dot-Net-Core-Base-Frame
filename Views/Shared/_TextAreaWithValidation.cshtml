@@ -1,0 +1,7 @@
+﻿@model QFormEditParam
+
+<div class="form-group">
+    <label title="@Model.Tooltip" for="@Model.IdName">@Model.Label<span class="required-field">@(Model.ExtraAttributes.Contains("required") ? "*" : "")</span></label>
+    <textarea class="form-control" name="@Model.IdName" value="@Model.Value" placeholder="@Model.PlaceHolder" @(Model.ExtraAttributes)></textarea>
+    <span class="field-validation-valid text-danger" data-valmsg-for="@Model.IdName" data-valmsg-replace="true"></span>
+</div>

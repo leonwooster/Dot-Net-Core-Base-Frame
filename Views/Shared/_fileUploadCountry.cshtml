@@ -1,0 +1,36 @@
+﻿@using Dksh.ePOD.RazorComponents 
+@model FileUploadParamCountry
+
+<div class="form-group">
+    @Html.CountryBasedLabel(Model.Country, Model.Resource, Model.Tooltip, Model.ExtraAttributes, Model.IdName)    
+    <div>
+        @if (Model.ExtraAttributes.Contains("readonly"))
+        {
+            if (Model.Value != null && !string.IsNullOrEmpty(Model.Value.ToString()))
+            {
+                <div><a href="@Model.Url" target="_blank"><img src="~/images/file.png" />@Model.Value</a></div>
+            }
+            <input type="hidden" id="@Model.IdName" name="@Model.IdName" value="@Model.Value" data-toggle="tooltip" title="@Model.Tooltip"/>
+        }
+        else if (Model.ExtraAttributes.Contains("required"))
+        {
+            if (Model.Value != null && !string.IsNullOrEmpty(Model.Value.ToString()))
+            {
+                <div><a href="@Model.Url" target="_blank"><img src="~/images/file.png" />@Model.Value</a></div>
+            }
+            <input type="file" class="btn btn-light" id="@Model.IdName" name="@Model.IdName" data-val="true" data-val-uploadrequired="Field is required." data-val-previous="@Model.Value" data-toggle="tooltip" title="@Model.Tooltip" />
+        }
+        else
+        {
+            if (Model.Value != null && !string.IsNullOrEmpty(Model.Value.ToString()))
+            {
+                <div upload-val="active" upload-data="@Model.Value"><a href="@Model.Url" target="_blank"><img src="~/images/file.png" />@Model.Value</a>&nbsp;<img style="cursor:pointer;" src="~/images/delete.png" onclick="deleteFile(this);" title="Delete" name="del" /><img style="cursor:pointer;" src="~/images/undo.gif" onclick="restoreFile(this);" title="Undo" class="undoH" name="undo" /></div>
+            }
+            <input type="file" class="btn btn-light" id="@Model.IdName" name="@Model.IdName" data-toggle="tooltip" title="@Model.Tooltip"/>
+        }
+        <!--the original value-->
+        <input type="hidden" id="@Model.Field" name="@Model.Field" value="@Model.Value" data-toggle="tooltip" title="@Model.Tooltip"/>
+
+        <span class="field-validation-valid text-danger" data-valmsg-for="@Model.IdName" data-valmsg-replace="true"></span>
+    </div>
+</div>

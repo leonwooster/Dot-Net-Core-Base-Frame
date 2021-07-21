@@ -1,6 +1,60 @@
-﻿@model Dksh.ePOD.Models.AddressTypeModel
+﻿@model IEnumerable<Dksh.ePOD.Models.AddressTypeModel>
 
 @inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Main Page";
+}
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <h2>Address Types</h2>
+
+        <div>
+            <hr />
+            <table>
+                <thead>
+                    <tr>
+                        <td>
+                            ID
+                        </td>
+                        <td>
+                            Name
+                        </td>
+                        <td>
+                            Modified Date
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.AddressTypeID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ModifiedDate)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.AddressTypeID }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.AddressTypeID })  |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.AddressTypeID })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
 
 
 @section Scripts

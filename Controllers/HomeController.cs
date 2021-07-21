@@ -45,8 +45,7 @@ namespace Dksh.ePOD.Controllers
         /// <param name="email">Email component.</param>
         /// <param name="emailConfiguration">Email configuration element.</param>
         public HomeController(ILogger<HomeController> logger,
-                                IPerson service,
-                                
+                                IPerson service,                                
                                 IMapper mapper,
                                 IEmailService email,
                                 IEmailConfiguration emailConfiguration,
@@ -71,9 +70,16 @@ namespace Dksh.ePOD.Controllers
         {
             try
             {
-                ViewData["Title"] = _localizer["PageTitle"];                
+                ViewData["Title"] = _localizer["PageTitle"];
 
-                return View("Index");                
+                List<AddressTypeBO> data = _service.GetAddressTypes();
+                List<AddressTypeModel> viewData = new List<AddressTypeModel>();
+                foreach(var a in data)
+                {
+                    viewData.Add(_mapper.Map<AddressTypeModel>(a));
+                }
+
+                return View("Index", viewData);
             }
             catch (Exception ex)
             {

@@ -4335,3 +4335,48 @@ System.InvalidOperationException: The following sections have been defined but h
 2021-07-21 23:55:04,838 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Application started. Press Ctrl+C to shut down.
 2021-07-21 23:55:04,861 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Hosting environment: Development
 2021-07-21 23:55:04,862 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Content root path: D:\Tester\TPI\Project
+2021-07-25 15:20:09,069 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Application started. Press Ctrl+C to shut down.
+2021-07-25 15:20:09,093 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Hosting environment: Development
+2021-07-25 15:20:09,094 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Content root path: D:\Tester\TPI\Project
+2021-07-25 15:20:27,511 [4] ERROR Dksh.ePOD.Controllers.HomeController [(null)] - Application Error
+System.AggregateException: One or more errors occurred. (An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.)
+ ---> System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetAsync(String requestUri)
+   at Dksh.ePOD.Services.PersonService.GetAddressTypesAPI() in D:\Tester\TPI\Project\Services\PersonService.cs:line 70
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at Dksh.ePOD.Controllers.HomeController.Index(Nullable`1 id) in D:\Tester\TPI\Project\Controllers\HomeController.cs:line 75
+2021-07-25 15:20:38,436 [9] ERROR Dksh.ePOD.Controllers.HomeController [(null)] - Application Error
+System.AggregateException: One or more errors occurred. (An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.)
+ ---> System.InvalidOperationException: An invalid request URI was provided. The request URI must either be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetAsync(String requestUri)
+   at Dksh.ePOD.Services.PersonService.GetAddressTypesAPI() in D:\Tester\TPI\Project\Services\PersonService.cs:line 70
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at Dksh.ePOD.Controllers.HomeController.Index(Nullable`1 id) in D:\Tester\TPI\Project\Controllers\HomeController.cs:line 75
+2021-07-25 15:21:22,532 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Application started. Press Ctrl+C to shut down.
+2021-07-25 15:21:22,555 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Hosting environment: Development
+2021-07-25 15:21:22,556 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Content root path: D:\Tester\TPI\Project
+2021-07-25 15:21:50,014 [4] ERROR Dksh.ePOD.Controllers.HomeController [(null)] - Application Error
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Dksh.ePOD.Controllers.HomeController.Index(Nullable`1 id) in D:\Tester\TPI\Project\Controllers\HomeController.cs:line 77
+2021-07-25 15:22:29,184 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Application started. Press Ctrl+C to shut down.
+2021-07-25 15:22:29,207 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Hosting environment: Development
+2021-07-25 15:22:29,208 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Content root path: D:\Tester\TPI\Project
+2021-07-25 15:24:28,394 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Application started. Press Ctrl+C to shut down.
+2021-07-25 15:24:28,417 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Hosting environment: Development
+2021-07-25 15:24:28,418 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Content root path: D:\Tester\TPI\Project
+2021-07-25 15:26:14,883 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Application started. Press Ctrl+C to shut down.
+2021-07-25 15:26:14,907 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Hosting environment: Development
+2021-07-25 15:26:14,908 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Content root path: D:\Tester\TPI\Project
+2021-07-25 15:30:06,628 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Application started. Press Ctrl+C to shut down.
+2021-07-25 15:30:06,652 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Hosting environment: Development
+2021-07-25 15:30:06,653 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Content root path: D:\Tester\TPI\Project

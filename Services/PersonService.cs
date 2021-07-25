@@ -54,7 +54,7 @@ namespace Dksh.ePOD.Services
 
             this.DbContext.SaveChanges();
 
-            return bo.AddressTypeID;
+            return bo.addressTypeID;
         }
 
         public List<AddressTypeBO> GetAddressTypes()
@@ -67,7 +67,7 @@ namespace Dksh.ePOD.Services
         public async Task<List<AddressTypeBO>> GetAddressTypesAPI()
         {
             HttpClient client = new HttpClient();
-            HttpResponseMessage response = await client.GetAsync("/Get");
+            HttpResponseMessage response = await client.GetAsync($"{base.AppConfig.WebAPIUrl}/AddressType");
             List<AddressTypeBO> result = null;
 
             if (response.IsSuccessStatusCode)

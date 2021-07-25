@@ -72,7 +72,7 @@ namespace Dksh.ePOD.Controllers
             {
                 ViewData["Title"] = _localizer["PageTitle"];
 
-                List<AddressTypeBO> data = _service.GetAddressTypes();
+                List<AddressTypeBO> data = _service.GetAddressTypesAPI().Result;
                 List<AddressTypeModel> viewData = new List<AddressTypeModel>();
                 foreach(var a in data)
                 {

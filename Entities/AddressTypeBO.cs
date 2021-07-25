@@ -13,9 +13,9 @@ namespace Dksh.ePOD.Entities
     public class AddressTypeBO
     {        
         [Key]
-        public int AddressTypeID { get; set; }
-        public string Name { get; set; }
+        public int addressTypeID { get; set; }
+        public string name { get; set; }
         public Guid rowguid { get; set; }
-        public DateTime ModifiedDate { get; set; }
+        public DateTime modifiedDate { get; set; }
     }
 }

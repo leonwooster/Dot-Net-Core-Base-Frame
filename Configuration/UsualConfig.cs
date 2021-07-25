@@ -9,10 +9,12 @@ namespace Dksh.ePOD.Configuration
     {
         long AppId { get; set; }
         string TenantId { get; set; }
+        string WebAPIUrl { get; set; }
     }
     public class UsualConfig : IUsualConfig
     {
         public long AppId { get; set; }
         public string TenantId { get; set; }
+        public string WebAPIUrl { get; set; }
     }
 }

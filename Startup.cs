@@ -45,11 +45,13 @@ namespace Dksh.ePOD
             long appId = Configuration.GetValue<long>("AppId");
             string tenantId = Configuration.GetValue<string>("TenantId"); 
             int loginAttemptCount = Configuration.GetValue<int>("LoginAttemptCount");
+            string url = Configuration.GetValue<string>("WebAPIUrl");
 
             UsualConfig config = new UsualConfig()
             {
                 AppId = appId,
-                TenantId = tenantId
+                TenantId = tenantId,
+                WebAPIUrl = url
             };
 
             services.AddDbContext<DataContext>();

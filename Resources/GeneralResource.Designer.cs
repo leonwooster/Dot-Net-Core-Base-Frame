@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Dksh.ePOD.Resources {
+namespace Dksh.ePOD.Web.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Dksh.ePOD.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Dksh.ePOD.Resources.GeneralResource", typeof(GeneralResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Dksh.ePOD.Web.Resources.GeneralResource", typeof(GeneralResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
